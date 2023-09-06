@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>City Stats</title>
+</head>
+<body>
+   <div>
+    <div id="wrapper">
+        <h2>Select a city</h2>
+        <div class="inputdiv">
+            <select id="input">
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit" >Show stats</button>
+        </div>
+        
+        
+    </div>
+   </div>
+    <script >
+        const button = document.querySelector("button");
+        button.addEventListener("click", answer);
+        function answer(){
+        let input = document.getElementById("input")
+        let city = input.options[input.selectedIndex].value;
+        let population = 0;
+        let literacyRate = 0;
+        let language = "";
+
+        switch(city){
+            case "Bengaluru":
+                console.log(city)
+                population = 12345
+                literacyRate = 90.2
+                language = "kanadam"
+            break
+            case "Chennai":
+                population = 1234;
+                literacyRate = 80.2;
+                language = "Tamil";
+            break;
+            case "Delhi":
+                population = 123;
+                literacyRate = 60.2;
+                language = "Hindhi";
+            break;
+            case "Mumbai":
+                population = 12;
+                literacyRate = 40.2;
+                language = "Mariti";
+            break;
+        }
+        let text = `My native is ${city} and the population is ${population} and the`
+        console.log(text)       
+     }
+    </script>
+</body>
+</html>
